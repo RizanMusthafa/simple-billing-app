@@ -1,5 +1,6 @@
 import React from 'react';
 import BillForm from './BillForm';
+import BillItems from './BillItems';
 
 class CreateBill extends React.Component {
   render() {
@@ -8,6 +9,8 @@ class CreateBill extends React.Component {
         <h1>Create Bill</h1>
         <hr />
         <BillForm />
+        <hr />
+        <BillItems />
       </React.Fragment>
     );
   }
