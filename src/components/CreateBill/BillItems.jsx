@@ -1,4 +1,5 @@
 import React from 'react';
+import BillItem from './BillItem';
 
 const BillItems = props => {
   return (
@@ -12,12 +13,9 @@ const BillItems = props => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Test Item</td>
-          <td>2</td>
-          <td>1000</td>
-          <td>2000</td>
-        </tr>
+        <BillItem />
+        <BillItem />
+        <BillItem />
       </tbody>
     </table>
   );
