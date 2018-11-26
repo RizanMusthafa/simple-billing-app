@@ -1,12 +1,12 @@
 import React from 'react';
 
-const BillItem = props => {
+const BillItem = ({ item: { itemName, unitPrice, quntity, total } }) => {
   return (
     <tr>
-      <td>Test Item</td>
-      <td>1000</td>
-      <td>2</td>
-      <td>2000</td>
+      <td>{itemName}</td>
+      <td>{unitPrice}</td>
+      <td>{quntity}</td>
+      <td>{total}</td>
     </tr>
   );
 };

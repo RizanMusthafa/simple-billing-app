@@ -1,7 +1,7 @@
 import React from 'react';
 import BillItem from './BillItem';
 
-const BillItems = props => {
+const BillItems = ({ items }) => {
   return (
     <table className="table table-sm table-striped">
       <thead>
@@ -13,9 +13,9 @@ const BillItems = props => {
         </tr>
       </thead>
       <tbody>
-        <BillItem />
-        <BillItem />
-        <BillItem />
+        {items.map(item => (
+          <BillItem item={item} />
+        ))}
       </tbody>
       <tfoot>
         <tr className="bg-secondary text-light font-weight-bold">

@@ -3,6 +3,9 @@ import BillForm from './BillForm';
 import BillItems from './BillItems';
 
 class CreateBill extends React.Component {
+  state = {
+    bill: []
+  };
   render() {
     return (
       <React.Fragment>
@@ -10,7 +13,7 @@ class CreateBill extends React.Component {
         <hr />
         <BillForm />
         <hr />
-        <BillItems />
+        <BillItems items={this.state.bill} />
         <hr />
         <div className="text-right">
           <button type="button" className="btn btn-sm">
