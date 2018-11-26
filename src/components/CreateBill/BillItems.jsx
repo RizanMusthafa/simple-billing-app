@@ -7,8 +7,8 @@ const BillItems = props => {
       <thead>
         <tr>
           <th>Item Name</th>
-          <th>Qty</th>
           <th>Unit Price</th>
+          <th>Qty</th>
           <th>Total</th>
         </tr>
       </thead>
