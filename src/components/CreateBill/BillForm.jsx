@@ -2,26 +2,28 @@ import React from 'react';
 
 const BillForm = props => {
   return (
-    <form className=" w3-grey">
-      <div className="w3-col s6">
+    <form className="row bg-light">
+      <div className="col-sm-6">
         <input
           name="item"
           placeholder="item name"
           type="text"
-          className="w3-input w3-sm w3-border"
+          className="form-control form-control-sm"
         />
       </div>
-      <div className="w3-col s3">
+      <div className="col-sm-3">
         <input
           name="qty"
           placeholder="Qty"
           type="number"
           min="1"
-          className="w3-input w3-border"
+          className="form-control form-control-sm"
         />
       </div>
-      <div className="w3-col s3">
-        <button className="w3-button w3-green w3-block">Add</button>
+      <div className="col-sm-3">
+        <button type="submit" className="btn btn-sm btn-block">
+          Add
+        </button>
       </div>
     </form>
   );
