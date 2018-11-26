@@ -1,4 +1,5 @@
 import React from 'react';
+import CreateBill from './components/CreateBill';
 
 class App extends React.Component {
   render() {
@@ -6,7 +7,7 @@ class App extends React.Component {
       <div className="w3-container">
         <div className="w3-row">
           <div className="w3-col s6">
-            <h3>Create Bill</h3>
+            <CreateBill />
           </div>
 
           <div className="w3-col s6">
