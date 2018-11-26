@@ -1,5 +1,6 @@
 import React from 'react';
 import CreateBill from './components/CreateBill';
+import BillList from './components/BillList';
 
 class App extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class App extends React.Component {
           </div>
 
           <div className="col-sm-6">
-            <h3>Bills</h3>
+            <BillList />
           </div>
         </div>
       </div>
