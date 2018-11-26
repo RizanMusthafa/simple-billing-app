@@ -11,6 +11,13 @@ class CreateBill extends React.Component {
         <BillForm />
         <hr />
         <BillItems />
+        <hr />
+        <div className="text-right">
+          <button type="button" className="btn btn-sm">
+            Checkout
+          </button>
+        </div>
+        <hr />
       </React.Fragment>
     );
   }
