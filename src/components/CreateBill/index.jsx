@@ -21,7 +21,9 @@ class CreateBill extends React.Component {
     const newBill = [...this.state.bill];
     const newItem = { ...this.state.formData };
     const duplicateItem = newBill.find(
-      item => item.itemName === newItem.itemName
+      item =>
+        item.itemName === newItem.itemName &&
+        item.unitPrice === newItem.unitPrice
     );
     if (duplicateItem) {
       const i = newBill.indexOf(duplicateItem);
@@ -35,8 +37,7 @@ class CreateBill extends React.Component {
       qtys: this.state.billSummery.qtys + newItem.qty,
       subTotal: this.state.billSummery.subTotal + newItem.total
     };
-    const emptyFormData = { itemName: '', unitPrice: 0, qty: 1, total: 0 };
-    this.setState({ bill: newBill, formData: emptyFormData, billSummery });
+    this.setState({ bill: newBill, billSummery });
   };
 
   fieldChange = e => {

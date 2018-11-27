@@ -14,7 +14,7 @@ const BillItems = ({ items, sum: { qtys, subTotal } }) => {
       </thead>
       <tbody>
         {items.map(item => (
-          <BillItem key={item.itemName} item={item} />
+          <BillItem key={item.itemName + item.unitPrice} item={item} />
         ))}
       </tbody>
       <tfoot>
