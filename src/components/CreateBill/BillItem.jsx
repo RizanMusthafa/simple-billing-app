@@ -1,11 +1,11 @@
 import React from 'react';
 
-const BillItem = ({ item: { itemName, unitPrice, quntity, total } }) => {
+const BillItem = ({ item: { itemName, unitPrice, qty, total } }) => {
   return (
     <tr>
       <td>{itemName}</td>
       <td>{unitPrice}</td>
-      <td>{quntity}</td>
+      <td>{qty}</td>
       <td>{total}</td>
     </tr>
   );

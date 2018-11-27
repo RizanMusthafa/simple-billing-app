@@ -14,7 +14,21 @@ class CreateBill extends React.Component {
   };
 
   addItem = e => {
-    console.log(e);
+    const newBill = [...this.state.bill];
+    const newItem = { ...this.state.formData };
+    const duplicateItem = newBill.find(
+      item => item.itemName === newItem.itemName
+    );
+    if (duplicateItem) {
+      const i = newBill.indexOf(duplicateItem);
+      duplicateItem.qty += newItem.qty;
+      duplicateItem.total += newItem.total;
+      newBill.splice(i, 1, duplicateItem);
+    } else {
+      newBill.push(newItem);
+    }
+    const emptyFormData = { itemName: '', unitPrice: 0, qty: 1, total: 0 };
+    this.setState({ bill: newBill, formData: emptyFormData });
   };
 
   fieldChange = e => {

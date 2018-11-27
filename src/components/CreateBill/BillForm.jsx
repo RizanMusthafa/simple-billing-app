@@ -9,7 +9,7 @@ const BillForm = ({
     <form
       onSubmit={e => {
         e.preventDefault();
-        handleSubmit(e);
+        handleSubmit();
       }}
       className="row"
     >

@@ -14,7 +14,7 @@ const BillItems = ({ items }) => {
       </thead>
       <tbody>
         {items.map(item => (
-          <BillItem item={item} />
+          <BillItem key={item.itemName} item={item} />
         ))}
       </tbody>
       <tfoot>
