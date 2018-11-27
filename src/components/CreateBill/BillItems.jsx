@@ -1,7 +1,7 @@
 import React from 'react';
 import BillItem from './BillItem';
 
-const BillItems = ({ items }) => {
+const BillItems = ({ items, sum: { qtys, subTotal } }) => {
   return (
     <table className="table table-sm table-striped">
       <thead>
@@ -20,8 +20,8 @@ const BillItems = ({ items }) => {
       <tfoot>
         <tr className="bg-secondary text-light font-weight-bold">
           <td colSpan="2">Sub Total</td>
-          <td>6</td>
-          <td>6000</td>
+          <td>{qtys}</td>
+          <td>{subTotal}</td>
         </tr>
       </tfoot>
     </table>

@@ -10,6 +10,10 @@ class CreateBill extends React.Component {
       qty: 1,
       total: 0
     },
+    billSummery: {
+      qtys: 0,
+      subTotal: 0
+    },
     bill: []
   };
 
@@ -27,8 +31,12 @@ class CreateBill extends React.Component {
     } else {
       newBill.push(newItem);
     }
+    const billSummery = {
+      qtys: this.state.billSummery.qtys + newItem.qty,
+      subTotal: this.state.billSummery.subTotal + newItem.total
+    };
     const emptyFormData = { itemName: '', unitPrice: 0, qty: 1, total: 0 };
-    this.setState({ bill: newBill, formData: emptyFormData });
+    this.setState({ bill: newBill, formData: emptyFormData, billSummery });
   };
 
   fieldChange = e => {
@@ -60,7 +68,7 @@ class CreateBill extends React.Component {
           handleFieldChange={this.fieldChange}
         />
         <hr />
-        <BillItems items={this.state.bill} />
+        <BillItems sum={this.state.billSummery} items={this.state.bill} />
         <hr />
         <div className="text-right">
           <button type="button" className="btn btn-sm">
