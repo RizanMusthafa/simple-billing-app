@@ -1,15 +1,27 @@
 import React from 'react';
 
-const BillForm = props => {
+const BillForm = ({
+  handleSubmit,
+  handleFieldChange,
+  formData: { itemName, qty, unitPrice, total }
+}) => {
   return (
-    <form className="row">
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        handleSubmit(e);
+      }}
+      className="row"
+    >
       <div className="col-sm-4">
         <label htmlFor="item">Item Name</label>
         <input
-          name="item"
+          name="itemName"
           placeholder="item name"
           type="text"
           className="form-control form-control-sm"
+          value={itemName}
+          onChange={handleFieldChange}
         />
       </div>
       <div className="col-sm-2">
@@ -19,8 +31,10 @@ const BillForm = props => {
           placeholder="Price"
           type="number"
           min="0"
-          disabled={true}
+          // disabled={true}
           className="form-control form-control-sm"
+          value={unitPrice}
+          onChange={handleFieldChange}
         />
       </div>
       <div className="col-sm-2">
@@ -31,17 +45,21 @@ const BillForm = props => {
           type="number"
           min="1"
           className="form-control form-control-sm"
+          value={qty}
+          onChange={handleFieldChange}
         />
       </div>
       <div className="col-sm-2">
         <label>Total</label>
         <input
-          name="totalPrice"
+          name="total"
           type="number"
           placeholder="Total"
           min="0"
           disabled={true}
           className="form-control form-control-sm"
+          value={total}
+          onChange={handleFieldChange}
         />
       </div>
       <div className="col-sm-2">
